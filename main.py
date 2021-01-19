@@ -5,11 +5,6 @@ import yaml
 from smarthome.honeywell import get_devices, get_rooms
 
 if __name__ == "__main__":
-    bearer = "1VwAR1waukxuUjSOE5AgNHr3h2OK"
-
-    api_key = "v4M5vCGGt0F6tMwxwb2ac5UGENegSS4H"
-    location_id = "2231065"
-    deviceID = "LCC-48A2E6039C30"
 
     with open("config.yaml") as f:
         # use safe_load instead load
