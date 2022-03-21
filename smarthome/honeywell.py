@@ -19,10 +19,11 @@ def get_devices(bearer, api_key, location_id):
     params = {"apikey": api_key, "locationId": location_id}
 
     response = requests.get(
-        BASE_URL + "devices",
+        f'{BASE_URL}devices',
         params=params,
-        headers={"Authorization": "Bearer " + bearer},
+        headers={"Authorization": f"Bearer {bearer}"},
     )
+
     if response.status_code != 200:
         raise BaseException(response.status_code)
 
@@ -33,10 +34,11 @@ def get_rooms(bearer, api_key, location_id, deviceId, groupId):
     params = {"apikey": api_key, "locationId": location_id}
 
     response = requests.get(
-        BASE_URL + "devices/thermostats/" + deviceId + "/group/" + groupId + "/rooms",
+        f'{BASE_URL}devices/thermostats/{deviceId}/group/{groupId}/rooms',
         params=params,
-        headers={"Authorization": "Bearer " + bearer},
+        headers={"Authorization": f"Bearer {bearer}"},
     )
+
     if response.status_code != 200:
         raise BaseException(response.status_code)
 
